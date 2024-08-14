@@ -1,0 +1,12 @@
+.Row {
+    margin-top: 20px;
+}
+
+.Card-cover {
+    width: 100%;
+    object-fit: cover;
+}
+
+.Card {
+    padding: 10px;
+}

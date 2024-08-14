@@ -1,0 +1,58 @@
+.Layout {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.Sider {
+    background-color: white !important;
+}
+
+.Header {
+
+    padding: 0;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 4rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem
+}
+
+.Logo {
+    height: 50px;
+    width: 50px;
+    margin-left: 1rem;
+}
+
+.LogoTitle {
+    position: relative;
+    animation: animateleft 0.4s
+}
+
+@keyframes animateleft {
+    from {
+        left: -150px;
+        opacity: 0
+    }
+
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+.Content{
+    background-color: white;
+    margin: 24px 16px;
+    padding: 24px;
+    min-height: 280;
+    border-radius: 10px;
+    overflow: auto;
+}
