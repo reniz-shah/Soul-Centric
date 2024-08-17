@@ -87,7 +87,7 @@ function App() {
         <Sider className="Sider" trigger={null} collapsible collapsed={collapsed}>
           <div className="logo-container">
 
-            <img className="Logo" src="../../assets/logo.png" alt="" />
+            <img className="Logo" src="https://raw.githubusercontent.com/reniz-shah/Soul-Centric/main/src/assets/logo.png" alt="" />
             {
               collapsed ? null :
                 <Title className="LogoTitle" level={4}>Soul Centric</Title>
