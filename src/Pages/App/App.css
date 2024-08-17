@@ -2,20 +2,18 @@
     height: 100vh;
     margin: 0;
     padding: 0;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .Sider {
-    background-color: white !important;
+    overflow: auto;
+    border-right: 0.1px solid #e6e5e5;
 }
 
 .Header {
-
     padding: 0;
-    background-color: white;
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
     gap: 4rem;
 }
 
@@ -48,11 +46,15 @@
     }
 }
 
-.Content{
-    background-color: white;
+.Content {
     margin: 24px 16px;
     padding: 24px;
     min-height: 280;
     border-radius: 10px;
     overflow: auto;
+}
+
+.ant-menu-submenu-selected>.ant-menu-submenu-title {
+    background-color: black;
+    color: white;
 }
