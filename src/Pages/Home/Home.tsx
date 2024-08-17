@@ -4,7 +4,7 @@ const Home = () => {
         <>
 
             <div>
-                aapdu Home
+                Home
             </div>
         </>
     )
