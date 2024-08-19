@@ -1,14 +1,12 @@
 import Home from "../Home/Home";
 import { useEffect, useState } from 'react';
 import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
   ProductOutlined,
   UserOutlined,
   InfoCircleOutlined,
   HomeOutlined
 } from '@ant-design/icons';
-import { Alert, Button, Layout, Menu, Spin, Typography } from 'antd';
+import { Alert, Layout, Menu, Spin, Typography } from 'antd';
 import type { MenuProps } from 'antd';
 import AboutUs from "../AboutUs/AboutUs";
 import ContactUs from "../ContactUs/ContactUs";
@@ -16,18 +14,19 @@ import './App.css';
 import categoriesData from '../../Data/categories.json';
 import { Category } from "../Categories/Categories.interface";
 import ProductsCategory from "../Categories/Categories";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 const { Title } = Typography;
 
-const { Header, Sider, Content } = Layout;
+const { Header, Content } = Layout;
 
 
 function App() {
-  const [collapsed, setCollapsed] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<Category>(categories[0]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedItem, setSelectedItem] = useState('4');
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
     setLoading(true);
@@ -84,46 +83,27 @@ function App() {
   return (
     <>
       <Layout className={'Layout'}>
-        <Sider className="Sider" trigger={null} collapsible collapsed={collapsed}>
+        <Header className="Header">
           <div className="logo-container">
-
             <img className="Logo" src="https://raw.githubusercontent.com/reniz-shah/Soul-Centric/main/src/assets/logo.png" alt="" />
-            {
-              collapsed ? null :
-                <Title className="LogoTitle" level={4}>Soul Centric</Title>
-
-            }
+            {width > 650 ?
+              (<Title onClick={() => setSelectedItem('4')} className="LogoTitle" level={4}>Soul Centric</Title>)
+              : null}
           </div>
-
-
           <Menu
-            mode="inline"
+            className="Menu"
+            mode="horizontal"
             defaultSelectedKeys={['4']}
+            selectedKeys={[selectedItem]}
             items={items}
           />
-        </Sider>
-        <Layout>
-          <Header className="Header">
-            <Button
-              className="MenuButton"
-              type="text"
-              icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-              onClick={() => setCollapsed(!collapsed)}
-              style={{
-                fontSize: '16px',
-                width: 64,
-                height: 64,
-              }}
-            />
-
-          </Header>
-          <Content className="Content">
-            {selectedItem === '4' ? <Home /> : null}
-            {selectedItem === '1' ? <ProductsCategory category={selectedCategory} /> : null}
-            {selectedItem === '2' ? <AboutUs /> : null}
-            {selectedItem === '3' ? <ContactUs /> : null}
-          </Content>
-        </Layout>
+        </Header>
+        <Content className="Content">
+          {selectedItem === '4' ? <Home /> : null}
+          {selectedItem === '1' ? <ProductsCategory category={selectedCategory} /> : null}
+          {selectedItem === '2' ? <AboutUs /> : null}
+          {selectedItem === '3' ? <ContactUs /> : null}
+        </Content>
       </Layout>
     </>
   )

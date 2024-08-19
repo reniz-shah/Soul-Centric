@@ -9,13 +9,6 @@ export const theme = {
         Layout: {
             headerBg: '#FFFFFF',
             bodyBg: '#FFFFFF',
-            siderBg: "#FFFFFF",
-        },
-        Menu: {
-            itemHoverBg: "#777673",
-            itemHoverColor: "#FFFFFF",
-            itemSelectedBg: "#000000",
-            itemSelectedColor: "#FFFFFF",
         }
     },
 }
