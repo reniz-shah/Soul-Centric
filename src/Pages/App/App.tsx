@@ -4,17 +4,19 @@ import {
   ProductOutlined,
   UserOutlined,
   InfoCircleOutlined,
-  HomeOutlined
+  HomeOutlined,
+  QuestionCircleOutlined
 } from '@ant-design/icons';
 import { Alert, Layout, Menu, Spin, Typography } from 'antd';
 import type { MenuProps } from 'antd';
 import AboutUs from "../AboutUs/AboutUs";
-import ContactUs from "../ContactUs/ContactUs";
 import './App.css';
 import categoriesData from '../../Data/categories.json';
 import { Category } from "../Categories/Categories.interface";
 import ProductsCategory from "../Categories/Categories";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import Inquiry from "../Inquiry/Inquiry";
+import ContactUs from "../ContactUs/ContactUs";
 const { Title } = Typography;
 
 const { Header, Content } = Layout;
@@ -72,11 +74,17 @@ function App() {
       onClick: () => setSelectedItem('2'),
     },
     {
+      key: '5',
+      icon: <QuestionCircleOutlined />,
+      label: 'Inquiry',
+      onClick: () => setSelectedItem('5'),
+    },
+    {
       key: '3',
       icon: <UserOutlined />,
       label: 'Contact Us',
       onClick: () => setSelectedItem('3'),
-    },
+    }
   ]
   if (loading) return <Spin size="large" />;
   if (error) return <Alert message="Error" description={error} type="error" />;
@@ -103,6 +111,7 @@ function App() {
           {selectedItem === '1' ? <ProductsCategory category={selectedCategory} /> : null}
           {selectedItem === '2' ? <AboutUs /> : null}
           {selectedItem === '3' ? <ContactUs /> : null}
+          {selectedItem === '5' ? <Inquiry /> : null}
         </Content>
       </Layout>
     </>
