@@ -1,9 +1,48 @@
-.Home{
-    background-color: red;
-    height: 200px;
-    width: 200px;
-    margin-top: 50px;
-    margin-left: 50px;
+.home{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
 }
 
+.carousel-image{
+    height: 400px;
+    width: 100vw;
+}
+
+.heading{
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    font-family:'Times New Roman', Times, serif;
+    margin-bottom: 0px;
+}
+
+.sub-heading{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: lighter;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.top-selling-product-card-holder-even{
+    display: flex;
+}
+
+.top-selling-product-card-holder-odd{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.heading-top-selling-product{
+    font-size: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
   
