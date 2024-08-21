@@ -34,3 +34,9 @@
 .Menu{
     width: 70vw;
 }
+
+.footer{
+    text-align: center;
+    background-color: black;
+    color: rgb(192, 192, 192);
+}
