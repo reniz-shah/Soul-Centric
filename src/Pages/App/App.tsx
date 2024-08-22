@@ -19,7 +19,7 @@ import Inquiry from "../Inquiry/Inquiry";
 import ContactUs from "../ContactUs/ContactUs";
 const { Title } = Typography;
 
-const { Header, Content } = Layout;
+const { Header, Content, Footer } = Layout;
 
 
 function App() {
@@ -113,6 +113,9 @@ function App() {
           {selectedItem === '3' ? <ContactUs /> : null}
           {selectedItem === '5' ? <Inquiry /> : null}
         </Content>
+        <Footer className="footer">
+          Ant Design ©{new Date().getFullYear()} Created by Ant UED
+        </Footer>
       </Layout>
     </>
   )
